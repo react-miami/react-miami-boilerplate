@@ -1,0 +1,1 @@
+export const BASIC_SET_API_URL = 'BASIC_SET_API_URL';

@@ -1,0 +1,45 @@
+/* ------------------------------------------------
+---------------------------------------------------
+   SPINNER
+---------------------------------------------------
+------------------------------------------------ */
+.spinner--loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+
+  .spinner--loader--circle_1, .spinner--loader--circle_2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: spinnerCircleBounce 2s infinite ease-in-out;
+    animation: spinnerCircleBounce 2s infinite ease-in-out;
+  }
+
+  .spinner--loader--circle_2 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+  }
+}
+
+@-webkit-keyframes spinnerCircleBounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes spinnerCircleBounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
