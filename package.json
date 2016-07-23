@@ -1,8 +1,8 @@
 {
   "name": "react-miami-boilerplate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "marracheco@gmail.com",
-  "description": "Simple React Boilerplate",
+  "description": "A React/Redux boilerplate with a nice tan.",
   "private": false,
   "scripts": {
     "rest-server": "node server.babel.js",
@@ -66,6 +66,7 @@
     "react-bootstrap": "^0.29.5",
     "react-data-components": "^0.6.0",
     "react-dom": "^0.14.7",
+    "react-fa": "^4.1.2",
     "react-global": "^0.1.8",
     "react-hot-loader": "^1.3.0",
     "react-redux": "^4.3.0",

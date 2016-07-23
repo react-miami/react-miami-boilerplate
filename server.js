@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
+import graphHTTP from 'express-graphql';
 import Schema from './server/api/schema';
 
 import * as api from './server/api/http';
@@ -22,6 +23,15 @@ app.use(express.static('build'));
  * API Endpoints
  */
 app.get('/api/0/documents', api.getDocuments);
+
+/**
+ * GraphQL Query
+ */
+app.use('/graphql', graphHTTP({
+  schema: Schema,
+  pretty: true,
+  graphiql: true
+}));
 
 
 app.listen(port, () => console.log('Rest API server running on http://localhost:' + port));

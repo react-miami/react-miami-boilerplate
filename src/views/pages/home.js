@@ -2,14 +2,14 @@
 import React from 'react';
 
 // Layout components.
-import Main from '../layouts/main';
+import Main from '../../layouts/main';
 
 // Utilities.
-import utils from '../utils';
+import utils from '../../utils';
 
 
 // Define class.
-class AboutPage extends React.Component {
+class Homepage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,19 +17,15 @@ class AboutPage extends React.Component {
     utils.title(props);
   }
 
-  onTreeViewClick(node) {
-    console.log(node.name, node.selected);
-  }
-
   // Render method.
   render() {
     return (
       <Main>
-        <h1>About Us</h1>
+        <h1>Homepage</h1>
       </Main>
     );
   }
 }
 
 // Export.
-export default AboutPage;
+export default Homepage;

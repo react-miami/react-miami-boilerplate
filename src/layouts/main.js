@@ -5,9 +5,6 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import TopNav from '../components/TopNav';
 
-// Utilities.
-import utils from '../utils';
-
 
 // Define class.
 class Layout extends React.Component {

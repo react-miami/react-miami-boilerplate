@@ -1,40 +1,40 @@
 import {
-  ASYNC_FETCH_REQUEST,
-  ASYNC_FETCH_SUCCESS,
-  ASYNC_FETCH_FAILURE
+  ASYNC_SAMPLE_REQUEST,
+  ASYNC_SAMPLE_SUCCESS,
+  ASYNC_SAMPLE_FAILURE
 } from '../constants/async-constants';
 
 import utils from '../../utils';
 
 
 // Async Action creators
-// Tenant
-export function fetchTenantRequest(paramUrl) {
+// Sample
+export function fetchSampleRequest(paramUrl) {
   return {
-    type: ASYNC_FETCH_REQUEST,
+    type: ASYNC_SAMPLE_REQUEST,
     paramUrl
   };
 }
 
-export function fetchTenantSuccess(paramUrl, json) {
+export function fetchSampleSuccess(paramUrl, json) {
   return {
-    type: ASYNC_FETCH_SUCCESS,
+    type: ASYNC_SAMPLE_SUCCESS,
     paramUrl,
     items: json,
     receivedAt: Date.now()
   };
 }
 
-export function fetchTenantFailure(paramUrl, error) {
+export function fetchSampleFailure(paramUrl, error) {
   return {
-    type: ASYNC_FETCH_FAILURE,
+    type: ASYNC_SAMPLE_FAILURE,
     paramUrl,
     error
   };
 }
 
-export function fetchTenant(paramUrl, globalSettings) {
-  const url = `${globalSettings.apiUrl}/tenant/url/${paramUrl}`;
+export function fetchSample(paramUrl) {
+  const url = `http://json.api.com/${paramUrl}`;
   const sHeaders = utils.getRestHeaders();
   const sInit = {
     method: 'GET',
@@ -42,18 +42,18 @@ export function fetchTenant(paramUrl, globalSettings) {
   };
 
   return (dispatch) => {
-    dispatch(fetchTenantRequest(paramUrl));
+    dispatch(fetchSampleRequest(paramUrl));
 
     return fetch(url, sInit)
       .then(response => response.json())
       .then(json => {
         if (json.ErrorMessage) {
-          return dispatch(fetchTenantFailure(paramUrl, json));
+          return dispatch(fetchSampleFailure(paramUrl, json));
         }
-        return dispatch(fetchTenantSuccess(paramUrl, json));
+        return dispatch(fetchSampleSuccess(paramUrl, json));
       })
       .catch(error => {
-        return dispatch(fetchTenantFailure(paramUrl, error));
+        return dispatch(fetchSampleFailure(paramUrl, error));
       });
   };
 }

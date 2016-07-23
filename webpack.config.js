@@ -7,8 +7,8 @@ const DEV = process.env.NODE_ENV !== 'production';
 
 const config = {
   entry: {
-    javascript: './src/index.js',
-    html: './src/index.html',
+    javascript: ['babel-polyfill', './src/index.js'],
+    html: ['babel-polyfill', './src/index.html'],
   },
 
   output: {
@@ -20,7 +20,12 @@ const config = {
     contentBase: './build',
     hot: true,
     noInfo: false,
-    port: 2015,
+    port: 2001,
+    proxy: {
+      '/api/0/documents': {
+        target: 'http://cosmos.pmapconnect.com:8081/'
+      }
+    }
   },
 
   copydocs: [
@@ -91,9 +96,9 @@ const config = {
 
 // If environment is not production
 if (DEV) {
-  console.log('DEV environment detected');
+  console.log('🛠  DEV environment detected 🛠');
 } else {
-  console.log('PROD environment detected');
+  console.log('🌎  PROD environment detected 🌎');
   config.plugins.push(
     // As per https://github.com/reactjs/redux/issues/1029
     new webpack.DefinePlugin({

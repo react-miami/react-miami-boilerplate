@@ -1,13 +1,13 @@
 import {
-  BASIC_SET_API_URL,
+  BASIC_SET_SAMPLE,
 } from '../constants/basic-constants';
 
 function basicReducer(state = {}, action) {
   switch (action.type) {
-  case BASIC_SET_API_URL:
+  case BASIC_SET_SAMPLE:
     return {
       ...state,
-      apiUrl: action.value
+      sample: action.value
     };
   default:
     return state;

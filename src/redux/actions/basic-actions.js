@@ -1,12 +1,12 @@
 import {
-  BASIC_SET_API_URL,
+  BASIC_SET_SAMPLE,
 } from '../constants/basic-constants';
 
 
 // Global.
-export function setApiUrl(value) {
+export function setSample(value) {
   return {
-    type: BASIC_SET_API_URL,
+    type: BASIC_SET_SAMPLE,
     value
   };
 }

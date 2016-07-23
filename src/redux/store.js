@@ -19,7 +19,6 @@ const logger = createLogger();
 
 // Apply all the middleware for Redux
 const middlewares = applyMiddleware(
-  // reduxRouterMiddleware,
   thunkMiddleware,
   logger,
   promiseMiddleware
@@ -27,8 +26,6 @@ const middlewares = applyMiddleware(
 
 // Create the Redux Store
 export const store = createStore(appReducers, middlewares);
-// reduxRouterMiddleware.listenForReplays(store);
 
 // Move the react-router stuff into Redux
 export const history = syncHistoryWithStore(browserHistory, store);
-// const reduxRouterMiddleware = syncHistory(history);

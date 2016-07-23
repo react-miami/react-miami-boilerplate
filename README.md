@@ -1,9 +1,32 @@
-# react-boilerplate
-Simple React boilerplate to get up and running quickly.
+# React Miami Boilerplate
 
-## Setup
+A React/Redux boilerplate with a nice tan.
+
+## Installation
+
 ```
-npm i && open http://localhost:2015 && npm start 
+# install it
+$ npm install
+
+# start it
+$ npm start
+
+# open it
+$ open http://localhost:2001
+
 ```
 
-by React Miami
+That's it and that's all!
+
+## Technology Overview
+  * [Javascript 2015 - ES6](http://www.ecma-international.org/ecma-262/6.0/index.html)
+  * [Eslint](http://eslint.org)
+  * [Npm](https://npmjs.org/)
+  * [Node](http://nodejs.org/)
+  * [React](https://facebook.github.io/react)
+  * [Redux](https://github.com/reactjs/redux)
+  * [Webpack](https://webpack.github.io)
+  * [Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
+  * [Git hooks](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) `> runs-on precommit` RUNS ON COMMIT!
+  * [Bootstrap](http://getbootstrap.com)
+  * [React-Bootstrap](http://react-bootstrap.github.io)

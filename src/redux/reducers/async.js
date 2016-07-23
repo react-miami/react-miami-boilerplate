@@ -1,22 +1,22 @@
 import {
-  ASYNC_FETCH_REQUEST,
-  ASYNC_FETCH_SUCCESS,
-  ASYNC_FETCH_FAILURE
+  ASYNC_SAMPLE_REQUEST,
+  ASYNC_SAMPLE_SUCCESS,
+  ASYNC_SAMPLE_FAILURE
 } from '../constants/async-constants';
 
 function asyncReducer(state = {
-  isFetching: true,
+  isFetching: false,
   didInvalidate: false,
   items: []
 }, action) {
   switch (action.type) {
-  case ASYNC_FETCH_REQUEST:
+  case ASYNC_SAMPLE_REQUEST:
     return {
       ...state,
       isFetching: true,
       didInvalidate: false
     };
-  case ASYNC_FETCH_SUCCESS:
+  case ASYNC_SAMPLE_SUCCESS:
     return {
       ...state,
       isFetching: false,
@@ -24,7 +24,7 @@ function asyncReducer(state = {
       items: action.tenant,
       lastUpdated: action.receivedAt
     };
-  case ASYNC_FETCH_FAILURE:
+  case ASYNC_SAMPLE_FAILURE:
     return {
       ...state,
       didInvalidate: true,

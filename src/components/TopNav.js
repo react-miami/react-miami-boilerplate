@@ -15,24 +15,32 @@ class TopNav extends React.Component {
     return (
       <Navbar inverse>
         <Navbar.Header>
+
           <Navbar.Brand>
             <Link to="/">React Boilerplate</Link>
           </Navbar.Brand>
+
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
+
             <LinkContainer to="/">
-            <NavItem eventKey={1}>Home</NavItem>
-          </LinkContainer>
+              <NavItem eventKey={1}>Home</NavItem>
+            </LinkContainer>
+
             <LinkContainer to="/about">
-            <NavItem eventKey={2}>About Us</NavItem>
-          </LinkContainer>
-            </Nav>
+              <NavItem eventKey={2}>About Us</NavItem>
+            </LinkContainer>
+
+          </Nav>
+
           <Nav pullRight>
+
             <LinkContainer to="/contact">
-            <NavItem eventKey={1}>Contact</NavItem>
-          </LinkContainer>
+              <NavItem eventKey={1}>Contact</NavItem>
+            </LinkContainer>
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>

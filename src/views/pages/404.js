@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router';
 
 // Layout components.
-import Main from '../layouts/main';
+import Main from '../../layouts/main';
 
 // Utilities.
-import utils from '../utils';
+import utils from '../../utils';
 
 
 // Define class.
