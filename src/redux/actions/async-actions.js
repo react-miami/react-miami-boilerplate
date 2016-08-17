@@ -34,7 +34,7 @@ export function fetchSampleFailure(paramUrl, error) {
 }
 
 export function fetchSample(paramUrl) {
-  const url = `http://json.api.com/${paramUrl}`;
+  const url = `https://pokeapi.co/api/v2/${paramUrl}`;
   const sHeaders = utils.getRestHeaders();
   const sInit = {
     method: 'GET',

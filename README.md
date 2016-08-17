@@ -1,6 +1,6 @@
 # React Miami Boilerplate
 
-A React/Redux boilerplate with a nice tan.
+A React/Redux boilerplate with Bootstrap.
 
 ## Installation
 
