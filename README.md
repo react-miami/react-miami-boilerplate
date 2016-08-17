@@ -27,6 +27,6 @@ That's it and that's all!
   * [Redux](https://github.com/reactjs/redux)
   * [Webpack](https://webpack.github.io)
   * [Webpack-dev-server](https://webpack.github.io/docs/webpack-dev-server.html)
-  * [Git hooks](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) `> runs-on precommit` RUNS ON COMMIT!
+  * [Git hooks](http://git-scm.com/book/en/Customizing-Git-Git-Hooks) (RUNS ON COMMIT!)
   * [Bootstrap](http://getbootstrap.com)
   * [React-Bootstrap](http://react-bootstrap.github.io)
