@@ -96,9 +96,9 @@ const config = {
 
 // If environment is not production
 if (DEV) {
-  console.log('🛠  DEV environment detected 🛠');
+  console.log('🛠  DEV environment detected 🛠'); // eslint-disable-line
 } else {
-  console.log('🌎  PROD environment detected 🌎');
+  console.log('🌎  PROD environment detected 🌎'); // eslint-disable-line
   config.plugins.push(
     // As per https://github.com/reactjs/redux/issues/1029
     new webpack.DefinePlugin({

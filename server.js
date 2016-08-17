@@ -34,4 +34,4 @@ app.use('/graphql', graphHTTP({
 }));
 
 
-app.listen(port, () => console.log('Rest API server running on http://localhost:' + port));
+app.listen(port, () => console.log('Rest API server running on http://localhost:' + port)); // eslint-disable-line
