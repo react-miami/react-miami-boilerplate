@@ -1,7 +1,7 @@
 import basic from './basic';
-import async from './async';
+import pokemon from './getPokemon';
 
 module.exports = {
   basic,
-  async
+  pokemon
 };

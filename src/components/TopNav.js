@@ -1,5 +1,6 @@
 // Dependencies.
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -12,12 +13,16 @@ class TopNav extends React.Component {
 
   // Render method.
   render() {
+    const { basic } = this.props;
+
     return (
-      <Navbar inverse>
+      <Navbar fluid inverse>
         <Navbar.Header>
 
           <Navbar.Brand>
-            <Link to="/">React Boilerplate</Link>
+            <Link to="/">
+              {basic.sample || 'React Boilerplate'}
+            </Link>
           </Navbar.Brand>
 
           <Navbar.Toggle />
@@ -31,6 +36,10 @@ class TopNav extends React.Component {
 
             <LinkContainer to="/about">
               <NavItem eventKey={2}>About Us</NavItem>
+            </LinkContainer>
+
+            <LinkContainer to="/pokemon">
+              <NavItem eventKey={3}>Pokemon</NavItem>
             </LinkContainer>
 
           </Nav>
@@ -48,6 +57,15 @@ class TopNav extends React.Component {
   }
 }
 
+// PropTypes declaration.
+TopNav.propTypes = {
+  basic: React.PropTypes.object,
+};
+
+// Redux connect to props.
+const mapStateToProps = (state) => ({
+  basic: state.basic,
+});
 
 // Export.
-export default TopNav;
+export default connect(mapStateToProps)(TopNav);

@@ -4,6 +4,7 @@ import React from 'react';
 // Ui components.
 import { Grid, Row, Col } from 'react-bootstrap';
 import TopNav from '../components/TopNav';
+import Footer from '../components/Footer';
 
 
 // Define class.
@@ -19,6 +20,7 @@ class Layout extends React.Component {
             {this.props.children}
           </Col>
         </Row>
+        <Footer />
       </Grid>
     );
   }
