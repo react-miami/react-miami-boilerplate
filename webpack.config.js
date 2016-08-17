@@ -20,12 +20,7 @@ const config = {
     contentBase: './build',
     hot: true,
     noInfo: false,
-    port: 2001,
-    proxy: {
-      '/api/0/documents': {
-        target: 'http://cosmos.pmapconnect.com:8081/'
-      }
-    }
+    port: 2001
   },
 
   copydocs: [
@@ -55,10 +50,6 @@ const config = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!sass')
       },
-      {
-        test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)$/,
-        loader: 'url-loader?limit=8192'
-      },
       // SVG.
       {
         test: /\.svg$/,
@@ -68,11 +59,6 @@ const config = {
       {
         test: /\.(png|jpg)$/,
         loader: 'url-loader?limit=8192&name=[name]_[sha512:hash:base64:7].[ext]'
-      },
-      // Fonts.
-      {
-        test: /\.(csv|ttf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: 'file-loader'
       }
     ]
   },

@@ -12,9 +12,6 @@
     "build-old": "NODE_ENV=production && npm run clean && webpack -p",
     "clean": "rimraf build",
     "lint": "eslint ./",
-    "test": "mocha --require ./test/test_helper 'test/**/*.js'",
-    "test:watch": "npm run test -- --watch",
-    "git-update": "git update-index --again"
   },
   "precommit": {
     "run": "git-update",
@@ -41,7 +38,6 @@
     "eslint-plugin-lodash": "^0.1.4",
     "eslint-plugin-react": "^3.6.3",
     "exports-loader": "^0.6.2",
-    "express": "^4.13.4",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "filepicker-js": "^2.3.6",
