@@ -2,7 +2,7 @@
 import React from 'react';
 
 // UI components.
-import Icon from 'react-fa';
+import { Glyphicon } from 'react-bootstrap';
 
 
 // Define class.
@@ -27,6 +27,7 @@ class Avatar extends React.Component {
 
     // Get random number from colors array
     const random = Math.floor((Math.random() * colors.length));
+
     this.state = {
       randomColor: colors[random]
     };
@@ -34,63 +35,19 @@ class Avatar extends React.Component {
 
   // Render method.
   render() {
-    let styles = {
-      avatar: {
-        position: 'relative',
-        display: 'inline-block',
-        width: '30px',
-        height: '30px',
-        overflow: 'hidden',
-        textAlign: 'center',
-        textTransform: 'capitalize',
-        margin: '5px 3px 5px 0',
-        borderRadius: '50%',
-        borderWidth: this.props.borderWidth || 3,
-        borderStyle: 'solid',
-        boxSizing: 'border-box',
-        transition: 'all .5s ease',
-      },
-
-      img: {
-        position: 'absolute',
-        top: '50%',
-        left: 0,
-        transform: 'translateY(-50%)',
-        width: '100%',
-        height: 'auto',
-      },
-
-      icon: {
-        position: 'absolute',
-        top: '50%',
-        left: 0,
-        transform: 'translateY(-50%)',
-        width: '100%',
-        fontSize: '16px',
-        color: 'rgba(255,255,255,.8)',
-        // paddingTop: '5px',
-      },
-
-      initials: {
-        position: 'absolute',
-        top: '50%',
-        left: 0,
-        width: '100%',
-        display: 'block',
-        textAlign: 'center',
-        textTransform: 'uppercase',
-        fontSize: '14px',
-        fontWeight: 100,
-        color: this.props.color ? this.props.color : 'inherit',
-        transform: 'translateY(-50%)',
-      }
-    };
-
+    const {
+      random,
+      color,
+      borderColor,
+      borderWidth,
+      backgroundColor
+    } = this.props;
+    const { randomColor } = this.state;
 
     let contents;
 
     // Size.
-    let size = this.props.size;
+    let { size } = this.props;
 
     let sizeStyle;
     if (size === 'xs') {
@@ -105,9 +62,8 @@ class Avatar extends React.Component {
       sizeStyle = size || 32;
     }
 
-
     // Border.
-    let shape = this.props.shape;
+    let { shape } = this.props;
     let radius;
     if (shape === 'square') {
       radius = 0;
@@ -115,13 +71,67 @@ class Avatar extends React.Component {
       radius = '50%';
     }
 
+    let styles = {
+      avatar: {
+        position: 'relative',
+        display: 'inline-block',
+        width: sizeStyle || '30px',
+        height: sizeStyle || '30px',
+        overflow: 'hidden',
+        textAlign: 'center',
+        textTransform: 'capitalize',
+        margin: '5px 3px 5px 0',
+        backgroundColor: random ? randomColor : null || backgroundColor,
+        borderWidth: borderWidth || 3,
+        borderStyle: 'solid',
+        borderColor: borderColor || 'rgba(0,0,0,.25)',
+        borderRadius: radius || '50%',
+        boxSizing: 'border-box',
+        transition: 'all .5s ease',
+        verticalAlign: 'middle',
+      },
+
+      img: {
+        position: 'absolute',
+        top: '50%',
+        left: 0,
+        transform: 'translateY(-50%)',
+        width: '100%',
+        height: 'auto',
+        borderRadius: radius,
+      },
+
+      icon: {
+        position: 'absolute',
+        top: '50%',
+        left: 0,
+        transform: 'translateY(-50%)',
+        width: '100%',
+        fontSize: '16px',
+        color: color ? color : 'inherit',
+        // paddingTop: '5px',
+      },
+
+      initials: {
+        position: 'absolute',
+        top: '50%',
+        left: 0,
+        width: '100%',
+        display: 'block',
+        textAlign: 'center',
+        textTransform: 'uppercase',
+        fontSize: '14px',
+        fontWeight: 100,
+        color: color ? color : 'inherit',
+        transform: 'translateY(-50%)',
+      }
+    };
 
     // Icon.
     const icon = this.props.icon || '';
     if (icon.length >= 1) {
-      contents = (<Icon name={icon} style={styles.icon} className="fa-fw" />);
+      contents = (<Glyphicon glyph={icon} style={styles.icon} className="fa-fw" />);
     }
-
 
     // Initials
     const name = this.props.name || '';
@@ -139,22 +149,6 @@ class Avatar extends React.Component {
         </span>
       );
     }
-
-
-    // styles override.
-    styles = { ...styles,
-      avatar: { ...styles.avatar,
-        width: sizeStyle,
-        height: sizeStyle,
-        verticalAlign: 'middle',
-        borderRadius: radius,
-        backgroundColor: this.props.random ? this.state.randomColor : null || this.props.backgroundColor,
-        borderColor: this.props.borderColor + ' !important' || 'rgba(0,0,0,.25)',
-      },
-      img: { ...styles.img,
-        borderRadius: radius,
-      }
-    };
 
     // Image.
     const imageSrc = this.props.src || '';
@@ -193,11 +187,6 @@ Avatar.propTypes = {
   name: React.PropTypes.string,
   random: React.PropTypes.bool,
   color: React.PropTypes.string,
-};
-
-// PropTypes defaults.
-Avatar.defaultProps = {
-  random: true,
 };
 
 // Export.
